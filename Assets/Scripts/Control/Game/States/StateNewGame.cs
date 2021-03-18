@@ -18,7 +18,7 @@ public class StateNewGame : AbstractState
         Debug.Log("NEW GAME!!!!!");
 
         //levelCounter.Reset();
-        LevelCounter.Instance.Reset();
+        LevelCounter.Instance.ResetLevel();
 
         gameStateControl.ChangeState(gameStateControl.StateNewLevel);
     }

@@ -7,13 +7,17 @@ public class LevelCounter : Singleton<LevelCounter>
 
     private int level = 0;
 
-    public override void OnCreate()
+    protected override void Awake()
     {
-        Debug.Log("ON CREATE!!!");
-        levelCounterChangeAction = FindObjectOfType<LevelCounterChangeAction>();
+        base.Awake();
+
+        if (levelCounterChangeAction == null)
+        {
+            levelCounterChangeAction = FindObjectOfType<LevelCounterChangeAction>();
+        }
     }
 
-    public void Reset()
+    public void ResetLevel()
     {
         level = 0;
         levelCounterChangeAction.Perform(level);

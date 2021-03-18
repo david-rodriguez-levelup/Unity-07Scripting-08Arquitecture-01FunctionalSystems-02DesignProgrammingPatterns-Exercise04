@@ -24,7 +24,6 @@ public abstract class Singleton<T> : MonoBehaviour where T : MonoBehaviour
                     Debug.Log($"NEW instance for singleton<{typeof(T)}>!");
                     GameObject container = new GameObject($"{typeof(T)}", typeof(T));
                     _instance = container.GetComponent<T>();
-                    //OnCreate();
                     return _instance;
                 }
             }
@@ -32,11 +31,6 @@ public abstract class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     }
 
     private static T _instance;
-
-    public virtual void OnCreate()
-    {
-        // Subclasses can override this to add extra components to the object.
-    }
 
     protected virtual void Awake()
     {
