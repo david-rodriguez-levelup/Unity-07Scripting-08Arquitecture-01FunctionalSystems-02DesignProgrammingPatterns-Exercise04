@@ -28,8 +28,8 @@ public class GameStateControl : MonoBehaviour
     {
         levelCounter = GetComponent<LevelCounter>();
 
-        StateNewGame = new StateNewGame(this, levelCounter);
-        StateNewLevel = new StateNewLevel(this, playerHealth, enemyHealth, levelCounter);
+        StateNewGame = new StateNewGame(this /*, levelCounter*/);
+        StateNewLevel = new StateNewLevel(this, playerHealth, enemyHealth /*, levelCounter*/);
         StateNewTurn = new StateNewTurn(this, playerSlotArrayControl, playerCommands, enemySlotArrayControl, enemyCommands);
         StatePlayerSelection = new StatePlayerSelection(this, playerSlotArrayControl, playerCommands);
         StateEnemySelection = new StateEnemySelection(this, enemySlotArrayControl, enemyCommands);

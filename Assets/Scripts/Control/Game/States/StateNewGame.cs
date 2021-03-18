@@ -5,19 +5,20 @@ using UnityEngine;
 public class StateNewGame : AbstractState
 {
 
-    private readonly LevelCounter levelCounter;
+    //private readonly LevelCounter levelCounter;
 
-    public StateNewGame(GameStateControl gameStateControl,
-                            LevelCounter levelCounter) : base(gameStateControl)
+    public StateNewGame(GameStateControl gameStateControl /*,
+                        LevelCounter levelCounter*/) : base(gameStateControl)
     {
-        this.levelCounter = levelCounter;
+        //this.levelCounter = levelCounter;
     }
 
     public override void Enter()
     {
         Debug.Log("NEW GAME!!!!!");
 
-        levelCounter.Reset();
+        //levelCounter.Reset();
+        LevelCounter.Instance.Reset();
 
         gameStateControl.ChangeState(gameStateControl.StateNewLevel);
     }
